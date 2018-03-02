@@ -70,7 +70,8 @@ public class QPostponedList extends DefaultListModel {
                                 // время постановки проставляется автоматом при создании кастомера.
                                 customer.setPriority(customer.getPriority().get() + 1);
                                 //добавим нового пользователя
-                                customer.getService().addCustomer(customer);
+                                final QService service = QServiceTree.getInstance().getById(customer.getService().getId());
+                                service.addCustomer(customer);
                                 // вроде как только что встал в очередь, ну и время проставим, а то ожидание будет огромное
                                 // только что встал типо. Поросто время нахождения в отложенных не считаетка как ожидание очереди. Инвче в statistic ожидание огромное
                                 customer.setStandTime(new Date());
