@@ -196,7 +196,11 @@ public final class QCustomer implements Comparable<QCustomer>, Serializable, Iid
     @Expose
     @SerializedName("recall_cnt")
     private Integer recallCount = 0;
+    @Expose
+    @SerializedName("start_postpone_period")
     private long startPontpone = 0;
+    @Expose
+    @SerializedName("finish_postpone_period")
     private long finishPontpone = 0;
     //    ANDREW added quantity for insert into DB
     @Expose
